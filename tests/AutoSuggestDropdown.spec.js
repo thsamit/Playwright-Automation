@@ -3,7 +3,7 @@ const {test, expect} = require('@playwright/test')
 test('Auto suggest dropdown', async({page}) =>{
     await page.goto('https://www.shohoz.com/')
 
-    await page.locator("//input[@id='fromcity']").fill('Dhaka') // Fill the value in the dropdown
+    await page.locator("//input[@id='fromcity']").fill('Dhaka') 
     await page.waitForSelector("//button/span") // waiting for the auto suggestions
 
     const fromCityOptions = await page.$$("//button/span") // getting all the auto suggestions into a variable
